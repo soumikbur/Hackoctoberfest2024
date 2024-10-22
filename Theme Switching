@@ -1,0 +1,77 @@
+//App.js
+
+import React, { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme, GlobalStyles } from './themes';
+
+const App = () => {
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  return (
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <Container>
+        <h1>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</h1>
+        <Button onClick={toggleTheme}>Toggle Theme</Button>
+      </Container>
+    </ThemeProvider>
+  );
+};
+
+export default App;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: ${(props) => props.theme.buttonBg};
+  color: ${(props) => props.theme.buttonColor};
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+
+//Themes.js
+import { createGlobalStyle } from 'styled-components';
+
+export const lightTheme = {
+  body: '#fff',
+  text: '#333',
+  buttonBg: '#333',
+  buttonColor: '#fff'
+};
+
+export const darkTheme = {
+  body: '#333',
+  text: '#fff',
+  buttonBg: '#fff',
+  buttonColor: '#333'
+};
+
+export const GlobalStyles = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.body};
+    color: ${(props) => props.theme.text};
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+`;
+
