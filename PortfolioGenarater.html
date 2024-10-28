@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Autofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .background-image {
+            background-image: url(preview-page0.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-white flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg flex max-w-4xl w-full">
+        <div class="p-10 flex-1">
+            <h1 class="text-3xl font-bold mb-4">Revolutionize your profile-building experience</h1>
+            <p class="text-gray-600 mb-6">Unleash your true tech potential with Autofolio: the ultimate solution for showcasing your skills, experiences, and achievements in a world shaped by technology.</p>
+            <button class="bg-blue-600 text-white px-6 py-2 rounded-lg">Begin Now</button>
+        </div>
+        <div class="p-10 flex-1 background-image rounded-r-lg relative">
+            <div class="space-y-4">
+                <input id="name" class="w-full p-3 rounded-lg border border-gray-300" placeholder="Enter your Name" type="text"/>
+                <input id="phone" class="w-full p-3 rounded-lg border border-gray-300" placeholder="Enter your Phone.no" type="text"/>
+                <input id="skills" class="w-full p-3 rounded-lg border border-gray-300" placeholder="Enter your Skill Set" type="text"/>
+                <input id="project" class="w-full p-3 rounded-lg border border-gray-300" placeholder="Enter Job Experience" type="text"/>
+                <button id="generate" class="bg-blue-600 text-white w-full py-3 rounded-lg">Generate</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generate').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const skills = document.getElementById('skills').value;
+            const project = document.getElementById('project').value;
+            const experience = document.getElementById('experience').value;
+            const description = document.getElementById('description').value;
+
+            console.log('Name:', name);
+            console.log('Phone:', phone);
+            console.log('Skills:', skills);
+            console.log('Project:', project);
+            console.log('Experience:', experience);
+            console.log('Description:', description);
+
+            // You can add more functionality here to handle the form data
+        });
+    </script>
+</body>
+</html>
