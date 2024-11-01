@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/background.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    color: #4a1259;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    color: #4a1259;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+input:focus {
+    outline: none;
+    border-color: #4a1259;
+    box-shadow: 0 0 10px rgba(74, 18, 89, 0.1);
+}
+
+button {
+    background: linear-gradient(135deg, #4a1259 0%, #ff6b6b 100%);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 18, 89, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    color: #4a1259;
+}
+
+a {
+    color: #ff6b6b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #4a1259;
+}
+
+
+input:invalid {
+    border-color: #ff6b6b;
+}
+
+input:valid {
+    border-color: #51cf66;
+}
+
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        margin: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px;
+    }
+}
+
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.error {
+    animation: shake 0.5s ease-in-out;
+}
